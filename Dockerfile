@@ -1,10 +1,9 @@
 FROM n8nio/n8n:latest
 
-USER root
-RUN apk add --no-cache postgresql-client
+WORKDIR /data
 
-USER node
+ENV N8N_PORT=10000
 
 EXPOSE 10000
 
-CMD ["n8n"]
+CMD ["n8n", "start"]
