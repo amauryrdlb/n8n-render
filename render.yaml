@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: n8n-app
+    env: docker
+    plan: free
+    healthCheckPath: /healthz
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: N8N_PORT
+        value: 10000
+      - key: N8N_PROTOCOL
+        value: https
+      - key: NODE_ENV
+        value: production
+      - key: GENERIC_TIMEZONE
+        value: Europe/Paris
